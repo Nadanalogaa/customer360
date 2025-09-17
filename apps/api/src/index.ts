@@ -3,7 +3,7 @@ import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { db } from '@retail/db';
-import * as schema from '@retail/db/src/schema';
+import * as schema from '@retail/db/schema';
 import { eq, desc } from 'drizzle-orm';
 import { randomUUID } from 'node:crypto';
 
