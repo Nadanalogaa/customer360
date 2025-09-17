@@ -3,16 +3,39 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { db } from '@retail/db';
-import * as schema from '@retail/db/src/schema';
+import * as schema from '@retail/db/schema';
 import { eq, desc } from 'drizzle-orm';
 import { randomUUID } from 'node:crypto';
 const GEMINI_MODEL = process.env.GEMINI_MODEL ?? 'gemini-1.5-flash';
+const allowedOrigins = (process.env.WEB_ORIGIN ?? '').split(',').map((value) => value.trim()).filter(Boolean);
 const app = express();
-app.use(cors({ origin: process.env.WEB_ORIGIN, credentials: true }));
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin) {
+            return callback(null, true);
+        }
+        if (allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+        callback(new Error(`Origin ${origin} is not allowed by CORS`));
+    },
+    credentials: true
+}));
 app.use(express.json({ limit: '5mb' }));
 app.use(cookieParser());
 // Health
 app.get('/health', (_req, res) => res.json({ ok: true }));
+// Root info (for Render health checks)
+app.get('/', (_req, res) => {
+    res.json({
+        service: 'Retail Promo API',
+        endpoints: {
+            health: '/health',
+            websiteGenerate: '/api/website/generate',
+            websiteDeploy: '/api/website/deploy'
+        }
+    });
+});
 // Demo login (binds to first tenant or creates one)
 app.post('/api/auth/login', async (req, res) => {
     const { email } = req.body;
@@ -164,7 +187,7 @@ async function buildWebsiteHtml(prompt, options) {
             : [])
         : [];
     const combined = chunks.join('\n');
-    const cleaned = cleanModelHtml(combined);
+    const cleaned = normalizeImageSources(cleanModelHtml(combined));
     return {
         model: data?.model ?? GEMINI_MODEL,
         html: cleaned,
@@ -201,14 +224,16 @@ function wrapHtml(content) {
 </html>`;
 }
 function fallbackWebsiteHtml(prompt, options) {
-    const menu = (options.menu ?? ['Home', 'About', 'Contact']).map((item) => `<a href="#">${item}</a>`).join('');
+    const menu = (options.menu ?? ['Home', 'About', 'Contact']).map((item) => `<a href="#">${escapeHtml(item)}</a>`).join('');
     const colors = options.palette ?? ['#2563eb', '#f97316'];
-    return `<!DOCTYPE html>
+    const safePrompt = escapeHtml(prompt);
+    const safeName = escapeHtml(options.companyName ?? 'AI Website');
+    return normalizeImageSources(`<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${options.companyName ?? 'AI Website'}</title>
+    <title>${safeName}</title>
     <style>
       :root { --primary: ${colors[0]}; --accent: ${colors[1] ?? colors[0]}; }
       * { box-sizing: border-box; }
@@ -223,8 +248,8 @@ function fallbackWebsiteHtml(prompt, options) {
   </head>
   <body>
     <header>
-      <h1>${options.companyName ?? 'Untitled Brand'}</h1>
-      <p>${prompt}</p>
+      <h1>${safeName}</h1>
+      <p>${safePrompt}</p>
       <nav>${menu}</nav>
     </header>
     <main>
@@ -232,12 +257,12 @@ function fallbackWebsiteHtml(prompt, options) {
         <h2>Website generator is not fully configured</h2>
         <p>Add your <strong>GEMINI_API_KEY</strong> to enable live AI output.</p>
         <p>The site prompt was:</p>
-        <pre style="white-space: pre-wrap; background: #f1f5f9; padding: 16px; border-radius: 16px;">${prompt}</pre>
+        <pre style="white-space: pre-wrap; background: #f1f5f9; padding: 16px; border-radius: 16px;">${safePrompt}</pre>
       </div>
     </main>
     <footer>Powered by Retail Promo Automation MVP</footer>
   </body>
-</html>`;
+</html>`);
 }
 async function deployToVercel(html, options) {
     const token = process.env.VERCEL_TOKEN;
@@ -308,4 +333,45 @@ function slugify(value) {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '')
         .slice(0, 48) || 'site';
+}
+function escapeHtml(value) {
+    return value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1200&q=80';
+function normalizeImageSources(html) {
+    const withImgSrc = html.replace(/<img\b[^>]*>/gi, (tag) => {
+        let updatedTag = tag;
+        updatedTag = updatedTag.replace(/src=["']([^"']+)["']/i, (_match, value) => {
+            if (/^(https?:|data:|\/\/)/i.test(value.trim())) {
+                return _match;
+            }
+            return `src="${PLACEHOLDER_IMAGE}"`;
+        });
+        updatedTag = updatedTag.replace(/srcset=["']([^"']+)["']/i, (_match, value) => {
+            const sanitized = value
+                .split(',')
+                .map((entry) => entry.trim())
+                .map((entry) => {
+                const [url, descriptor] = entry.split(/\s+/);
+                if (url && /^(https?:|data:|\/\/)/i.test(url)) {
+                    return entry;
+                }
+                return descriptor ? `${PLACEHOLDER_IMAGE} ${descriptor}` : PLACEHOLDER_IMAGE;
+            })
+                .join(', ');
+            return `srcset="${sanitized}"`;
+        });
+        return updatedTag;
+    });
+    return withImgSrc.replace(/url\((['"]?)([^'"\)]+)\1\)/gi, (full, _quote, value) => {
+        if (/^(https?:|data:|\/\/)/i.test(value.trim())) {
+            return full;
+        }
+        return `url(${PLACEHOLDER_IMAGE})`;
+    });
 }

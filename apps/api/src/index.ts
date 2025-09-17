@@ -407,18 +407,18 @@ function normalizeImageSources(html: string) {
   const withImgSrc = html.replace(/<img\b[^>]*>/gi, (tag) => {
     let updatedTag = tag;
 
-    updatedTag = updatedTag.replace(/src=["']([^"']+)["']/i, (_match, value) => {
+    updatedTag = updatedTag.replace(/src=["']([^"']+)["']/i, (_match: string, value: string) => {
       if (/^(https?:|data:|\/\/)/i.test(value.trim())) {
         return _match;
       }
       return `src="${PLACEHOLDER_IMAGE}"`;
     });
 
-    updatedTag = updatedTag.replace(/srcset=["']([^"']+)["']/i, (_match, value) => {
+    updatedTag = updatedTag.replace(/srcset=["']([^"']+)["']/i, (_match: string, value: string) => {
       const sanitized = value
         .split(',')
-        .map((entry) => entry.trim())
-        .map((entry) => {
+        .map((entry: string) => entry.trim())
+        .map((entry: string) => {
           const [url, descriptor] = entry.split(/\s+/);
           if (url && /^(https?:|data:|\/\/)/i.test(url)) {
             return entry;
@@ -432,7 +432,7 @@ function normalizeImageSources(html: string) {
     return updatedTag;
   });
 
-  return withImgSrc.replace(/url\((['"]?)([^'"\)]+)\1\)/gi, (full, quote, value) => {
+  return withImgSrc.replace(/url\((['"]?)([^'"\)]+)\1\)/gi, (full: string, _quote: string, value: string) => {
     if (/^(https?:|data:|\/\/)/i.test(value.trim())) {
       return full;
     }
