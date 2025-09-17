@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npm install && npm --workspace packages/db run build && npm --workspace apps/web run build",
+  "outputDirectory": "apps/web/dist"
+}
