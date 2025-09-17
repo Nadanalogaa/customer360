@@ -1,0 +1,35 @@
+0 verbose cli /Users/ayyappanp/.nvm/versions/node/v22.13.1/bin/node /Users/ayyappanp/.nvm/versions/node/v22.13.1/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.13.1
+3 silly config load:file:/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/ayyappanp/Documents/Customer360/.npmrc
+5 silly config load:file:/Users/ayyappanp/Documents/Customer360/tmp-home/.npmrc
+6 silly config load:file:/Users/ayyappanp/.nvm/versions/node/v22.13.1/etc/npmrc
+7 verbose title npm run db:push
+8 verbose argv "--workspace" "packages/db" "run" "db:push"
+9 verbose logfile logs-max:10 dir:/Users/ayyappanp/Documents/Customer360/tmp-home/.npm/_logs/2025-09-16T10_32_19_541Z-
+10 verbose logfile /Users/ayyappanp/Documents/Customer360/tmp-home/.npm/_logs/2025-09-16T10_32_19_541Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose stack Error: command failed
+12 verbose stack     at promiseSpawn (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:22:22)
+12 verbose stack     at spawnWithShell (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:124:10)
+12 verbose stack     at promiseSpawn (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:12:12)
+12 verbose stack     at runScriptPkg (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/run-script-pkg.js:77:13)
+12 verbose stack     at runScript (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/run-script.js:9:12)
+12 verbose stack     at #run (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/lib/commands/run-script.js:131:13)
+12 verbose stack     at RunScript.execWorkspaces (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/lib/commands/run-script.js:63:24)
+12 verbose stack     at async Npm.exec (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/lib/npm.js:207:9)
+12 verbose stack     at async module.exports (/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/lib/cli/entry.js:74:5)
+13 error Lifecycle script `db:push` failed with error:
+14 error code 1
+15 error path /Users/ayyappanp/Documents/Customer360/packages/db
+16 error workspace @retail/db
+17 error location /Users/ayyappanp/Documents/Customer360/packages/db
+18 error command failed
+19 error command sh -c drizzle-kit push
+20 verbose cwd /Users/ayyappanp/Documents/Customer360
+21 verbose os Darwin 24.4.0
+22 verbose node v22.13.1
+23 verbose npm  v10.9.2
+24 verbose exit 1
+25 verbose code 1

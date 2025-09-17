@@ -1,0 +1,13 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import './index.css';
+import AppShell from './shell/AppShell';
+import Dashboard from './pages/Dashboard';
+import ImageStudio from './pages/ImageStudio';
+import WebsiteBuilder from './pages/WebsiteBuilder';
+import Scheduler from './pages/Scheduler';
+import Connections from './pages/Connections';
+import Analytics from './pages/Analytics';
+createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(BrowserRouter, { children: _jsx(Routes, { children: _jsxs(Route, { element: _jsx(AppShell, {}), children: [_jsx(Route, { path: "/", element: _jsx(Dashboard, {}) }), _jsx(Route, { path: "/studio", element: _jsx(ImageStudio, {}) }), _jsx(Route, { path: "/website", element: _jsx(WebsiteBuilder, {}) }), _jsx(Route, { path: "/scheduler", element: _jsx(Scheduler, {}) }), _jsx(Route, { path: "/connections", element: _jsx(Connections, {}) }), _jsx(Route, { path: "/analytics", element: _jsx(Analytics, {}) }), _jsx(Route, { path: "*", element: _jsx(Navigate, { to: "/" }) })] }) }) }) }));

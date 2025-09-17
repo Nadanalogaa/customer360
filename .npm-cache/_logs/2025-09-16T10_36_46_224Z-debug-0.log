@@ -1,0 +1,925 @@
+0 verbose cli /Users/ayyappanp/.nvm/versions/node/v22.13.1/bin/node /Users/ayyappanp/.nvm/versions/node/v22.13.1/bin/npm
+1 info using npm@10.9.2
+2 info using node@v22.13.1
+3 silly config load:file:/Users/ayyappanp/.nvm/versions/node/v22.13.1/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/ayyappanp/Documents/Customer360/.npmrc
+5 silly config load:file:/Users/ayyappanp/.npmrc
+6 silly config load:file:/Users/ayyappanp/.nvm/versions/node/v22.13.1/etc/npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:/Users/ayyappanp/Documents/Customer360/.npm-cache/_logs/2025-09-16T10_36_46_224Z-
+10 verbose logfile /Users/ayyappanp/Documents/Customer360/.npm-cache/_logs/2025-09-16T10_36_46_224Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+14 silly idealTree buildDeps
+15 silly fetch manifest @types/node@^22.9.0
+16 silly packumentCache full:https://registry.npmjs.org/@types%2fnode cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 430ms (cache revalidated)
+18 silly packumentCache full:https://registry.npmjs.org/@types%2fnode set size:10547923 disposed:false
+19 silly fetch manifest @types/pg@^8.11.10
+20 silly packumentCache full:https://registry.npmjs.org/@types%2fpg cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/@types%2fpg 113ms (cache revalidated)
+22 silly packumentCache full:https://registry.npmjs.org/@types%2fpg set size:188401 disposed:false
+23 silly placeDep ROOT @types/node@22.18.4 OK for: packages/db want: ^22.9.0
+24 silly placeDep ROOT @types/pg@8.15.5 OK for: packages/db want: ^8.11.10
+25 silly fetch manifest undici-types@~6.21.0
+26 silly packumentCache full:https://registry.npmjs.org/undici-types cache-miss
+27 http fetch GET 200 https://registry.npmjs.org/undici-types 174ms (cache miss)
+28 silly packumentCache full:https://registry.npmjs.org/undici-types set size:undefined disposed:false
+29 silly placeDep ROOT undici-types@6.21.0 OK for: @types/node@22.18.4 want: ~6.21.0
+30 silly reify moves {}
+31 silly audit bulk request {
+31 silly audit   '@retail/web': [ '0.1.0' ],
+31 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+31 silly audit   '@drizzle-team/brocli': [ '0.10.2' ],
+31 silly audit   '@esbuild-kit/core-utils': [ '3.3.2' ],
+31 silly audit   '@esbuild/android-arm': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/android-arm64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/android-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/darwin-arm64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/darwin-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/freebsd-arm64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/freebsd-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-arm': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-arm64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-ia32': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-loong64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-mips64el': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-ppc64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-riscv64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-s390x': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/linux-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/netbsd-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/openbsd-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/sunos-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/win32-arm64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/win32-ia32': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/win32-x64': [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   esbuild: [ '0.18.20', '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild-kit/esm-loader': [ '2.6.5' ],
+31 silly audit   '@esbuild/aix-ppc64': [ '0.19.12', '0.25.9', '0.21.5' ],
+31 silly audit   '@esbuild/netbsd-arm64': [ '0.25.9' ],
+31 silly audit   '@esbuild/openbsd-arm64': [ '0.25.9' ],
+31 silly audit   '@esbuild/openharmony-arm64': [ '0.25.9' ],
+31 silly audit   '@isaacs/cliui': [ '8.0.2' ],
+31 silly audit   'ansi-regex': [ '6.2.2', '5.0.1' ],
+31 silly audit   'ansi-styles': [ '6.2.3', '4.3.0' ],
+31 silly audit   'emoji-regex': [ '9.2.2', '8.0.0' ],
+31 silly audit   'string-width': [ '5.1.2', '4.2.3' ],
+31 silly audit   'strip-ansi': [ '7.1.2', '6.0.1' ],
+31 silly audit   'wrap-ansi': [ '8.1.0', '7.0.0' ],
+31 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+31 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+31 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+31 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+31 silly audit   '@nodelib/fs.scandir': [ '2.1.5' ],
+31 silly audit   '@nodelib/fs.stat': [ '2.0.5' ],
+31 silly audit   '@nodelib/fs.walk': [ '1.2.8' ],
+31 silly audit   '@phc/format': [ '1.0.0' ],
+31 silly audit   '@pkgjs/parseargs': [ '0.11.0' ],
+31 silly audit   '@remix-run/router': [ '1.23.0' ],
+31 silly audit   '@rollup/rollup-android-arm-eabi': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-android-arm64': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-darwin-arm64': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-darwin-x64': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-freebsd-arm64': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-freebsd-x64': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-arm-gnueabihf': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-arm-musleabihf': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-arm64-gnu': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-arm64-musl': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-loong64-gnu': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-ppc64-gnu': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-riscv64-gnu': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-riscv64-musl': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-s390x-gnu': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-x64-gnu': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-linux-x64-musl': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-openharmony-arm64': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-win32-arm64-msvc': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-win32-ia32-msvc': [ '4.50.2' ],
+31 silly audit   '@rollup/rollup-win32-x64-msvc': [ '4.50.2' ],
+31 silly audit   '@types/estree': [ '1.0.8' ],
+31 silly audit   '@types/prop-types': [ '15.7.15' ],
+31 silly audit   '@types/react': [ '18.3.24' ],
+31 silly audit   '@types/react-dom': [ '18.3.7' ],
+31 silly audit   accepts: [ '1.3.8' ],
+31 silly audit   'any-promise': [ '1.3.0' ],
+31 silly audit   anymatch: [ '3.1.3' ],
+31 silly audit   arg: [ '5.0.2' ],
+31 silly audit   argon2: [ '0.41.1' ],
+31 silly audit   'array-flatten': [ '1.1.1' ],
+31 silly audit   autoprefixer: [ '10.4.21' ],
+31 silly audit   'balanced-match': [ '1.0.2' ],
+31 silly audit   'baseline-browser-mapping': [ '2.8.4-beta3' ],
+31 silly audit   'binary-extensions': [ '2.3.0' ],
+31 silly audit   'body-parser': [ '1.20.3' ],
+31 silly audit   debug: [ '2.6.9', '4.4.3' ],
+31 silly audit   ms: [ '2.0.0', '2.1.3' ],
+31 silly audit   'brace-expansion': [ '2.0.2' ],
+31 silly audit   braces: [ '3.0.3' ],
+31 silly audit   browserslist: [ '4.26.1' ],
+31 silly audit   'buffer-from': [ '1.1.2' ],
+31 silly audit   bytes: [ '3.1.2' ],
+31 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+31 silly audit   'call-bound': [ '1.0.4' ],
+31 silly audit   'camelcase-css': [ '2.0.1' ],
+31 silly audit   'caniuse-lite': [ '1.0.30001743' ],
+31 silly audit   chalk: [ '4.1.2' ],
+31 silly audit   'supports-color': [ '7.2.0', '8.1.1' ],
+31 silly audit   chokidar: [ '3.6.0' ],
+31 silly audit   'glob-parent': [ '5.1.2', '6.0.2' ],
+31 silly audit   cliui: [ '8.0.1' ],
+31 silly audit   'color-convert': [ '2.0.1' ],
+31 silly audit   'color-name': [ '1.1.4' ],
+31 silly audit   commander: [ '4.1.1' ],
+31 silly audit   concurrently: [ '9.2.1' ],
+31 silly audit   'content-disposition': [ '0.5.4' ],
+31 silly audit   'content-type': [ '1.0.5' ],
+31 silly audit   cookie: [ '0.7.2', '0.7.1' ],
+31 silly audit   'cookie-parser': [ '1.4.7' ],
+31 silly audit   'cookie-signature': [ '1.0.6' ],
+31 silly audit   cors: [ '2.8.5' ],
+31 silly audit   'cross-spawn': [ '7.0.6' ],
+31 silly audit   cssesc: [ '3.0.0' ],
+31 silly audit   csstype: [ '3.1.3' ],
+31 silly audit   depd: [ '2.0.0' ],
+31 silly audit   destroy: [ '1.2.0' ],
+31 silly audit   didyoumean: [ '1.2.2' ],
+31 silly audit   dlv: [ '1.1.3' ],
+31 silly audit   dotenv: [ '16.6.1' ],
+31 silly audit   'drizzle-kit': [ '0.24.2' ],
+31 silly audit   'dunder-proto': [ '1.0.1' ],
+31 silly audit   eastasianwidth: [ '0.2.0' ],
+31 silly audit   'ee-first': [ '1.1.1' ],
+31 silly audit   'electron-to-chromium': [ '1.5.218' ],
+31 silly audit   encodeurl: [ '2.0.0', '1.0.2' ],
+31 silly audit   'es-define-property': [ '1.0.1' ],
+31 silly audit   'es-errors': [ '1.3.0' ],
+31 silly audit   'es-object-atoms': [ '1.1.1' ],
+31 silly audit   'esbuild-register': [ '3.6.0' ],
+31 silly audit   escalade: [ '3.2.0' ],
+31 silly audit   'escape-html': [ '1.0.3' ],
+31 silly audit   etag: [ '1.8.1' ],
+31 silly audit   express: [ '4.21.2' ],
+31 silly audit   'fast-glob': [ '3.3.3' ],
+31 silly audit   fastq: [ '1.19.1' ],
+31 silly audit   'fill-range': [ '7.1.1' ],
+31 silly audit   finalhandler: [ '1.3.1' ],
+31 silly audit   'foreground-child': [ '3.3.1' ],
+31 silly audit   forwarded: [ '0.2.0' ],
+31 silly audit   'fraction.js': [ '4.3.7' ],
+31 silly audit   fresh: [ '0.5.2' ],
+31 silly audit   fsevents: [ '2.3.3' ],
+31 silly audit   'function-bind': [ '1.1.2' ],
+31 silly audit   'get-caller-file': [ '2.0.5' ],
+31 silly audit   'get-intrinsic': [ '1.3.0' ],
+31 silly audit   'get-proto': [ '1.0.1' ],
+31 silly audit   'get-tsconfig': [ '4.10.1' ],
+31 silly audit   glob: [ '10.4.5' ],
+31 silly audit   gopd: [ '1.2.0' ],
+31 silly audit   'has-flag': [ '4.0.0' ],
+31 silly audit   'has-symbols': [ '1.1.0' ],
+31 silly audit   hasown: [ '2.0.2' ],
+31 silly audit   'http-errors': [ '2.0.0' ],
+31 silly audit   'iconv-lite': [ '0.4.24' ],
+31 silly audit   inherits: [ '2.0.4' ],
+31 silly audit   'ipaddr.js': [ '1.9.1' ],
+31 silly audit   'is-binary-path': [ '2.1.0' ],
+31 silly audit   'is-core-module': [ '2.16.1' ],
+31 silly audit   'is-extglob': [ '2.1.1' ],
+31 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+31 silly audit   'is-glob': [ '4.0.3' ],
+31 silly audit   'is-number': [ '7.0.0' ],
+31 silly audit   isexe: [ '2.0.0' ],
+31 silly audit   jackspeak: [ '3.4.3' ],
+31 silly audit   jiti: [ '1.21.7' ],
+31 silly audit   'js-tokens': [ '4.0.0' ],
+31 silly audit   lilconfig: [ '3.1.3' ],
+31 silly audit   'lines-and-columns': [ '1.2.4' ],
+31 silly audit   'loose-envify': [ '1.4.0' ],
+31 silly audit   'lru-cache': [ '10.4.3' ],
+31 silly audit   'lucide-react': [ '0.453.0' ],
+31 silly audit   'math-intrinsics': [ '1.1.0' ],
+31 silly audit   'media-typer': [ '0.3.0' ],
+31 silly audit   'merge-descriptors': [ '1.0.3' ],
+31 silly audit   merge2: [ '1.4.1' ],
+31 silly audit   methods: [ '1.1.2' ],
+31 silly audit   micromatch: [ '4.0.8' ],
+31 silly audit   mime: [ '1.6.0' ],
+31 silly audit   'mime-db': [ '1.52.0' ],
+31 silly audit   'mime-types': [ '2.1.35' ],
+31 silly audit   minimatch: [ '9.0.5' ],
+31 silly audit   minipass: [ '7.1.2' ],
+31 silly audit   mz: [ '2.7.0' ],
+31 silly audit   nanoid: [ '3.3.11' ],
+31 silly audit   negotiator: [ '0.6.3' ],
+31 silly audit   'node-addon-api': [ '8.5.0' ],
+31 silly audit   'node-gyp-build': [ '4.8.4' ],
+31 silly audit   'node-releases': [ '2.0.21' ],
+31 silly audit   'normalize-path': [ '3.0.0' ],
+31 silly audit   'normalize-range': [ '0.1.2' ],
+31 silly audit   'object-assign': [ '4.1.1' ],
+31 silly audit   'object-hash': [ '3.0.0' ],
+31 silly audit   'object-inspect': [ '1.13.4' ],
+31 silly audit   'on-finished': [ '2.4.1' ],
+31 silly audit   'package-json-from-dist': [ '1.0.1' ],
+31 silly audit   parseurl: [ '1.3.3' ],
+31 silly audit   'path-key': [ '3.1.1' ],
+31 silly audit   'path-parse': [ '1.0.7' ],
+31 silly audit   'path-scurry': [ '1.11.1' ],
+31 silly audit   'path-to-regexp': [ '0.1.12' ],
+31 silly audit   pg: [ '8.16.3' ],
+31 silly audit   'pg-cloudflare': [ '1.2.7' ],
+31 silly audit   'pg-connection-string': [ '2.9.1' ],
+31 silly audit   'pg-int8': [ '1.0.1' ],
+31 silly audit   'pg-pool': [ '3.10.1' ],
+31 silly audit   'pg-protocol': [ '1.10.3' ],
+31 silly audit   'pg-types': [ '2.2.0' ],
+31 silly audit   pgpass: [ '1.0.5' ],
+31 silly audit   picocolors: [ '1.1.1' ],
+31 silly audit   picomatch: [ '2.3.1' ],
+31 silly audit   pify: [ '2.3.0' ],
+31 silly audit   pirates: [ '4.0.7' ],
+31 silly audit   postcss: [ '8.5.6' ],
+31 silly audit   'postcss-import': [ '15.1.0' ],
+31 silly audit   'postcss-js': [ '4.0.1' ],
+31 silly audit   'postcss-load-config': [ '4.0.2' ],
+31 silly audit   'postcss-nested': [ '6.2.0' ],
+31 silly audit   'postcss-selector-parser': [ '6.1.2' ],
+31 silly audit   'postcss-value-parser': [ '4.2.0' ],
+31 silly audit   'postgres-array': [ '2.0.0' ],
+31 silly audit   'postgres-bytea': [ '1.0.0' ],
+31 silly audit   'postgres-date': [ '1.0.7' ],
+31 silly audit   'postgres-interval': [ '1.2.0' ],
+31 silly audit   'proxy-addr': [ '2.0.7' ],
+31 silly audit   qs: [ '6.13.0' ],
+31 silly audit   'queue-microtask': [ '1.2.3' ],
+31 silly audit   'range-parser': [ '1.2.1' ],
+31 silly audit   'raw-body': [ '2.5.2' ],
+31 silly audit   react: [ '18.3.1' ],
+31 silly audit   'react-dom': [ '18.3.1' ],
+31 silly audit   'react-router': [ '6.30.1' ],
+31 silly audit   'react-router-dom': [ '6.30.1' ],
+31 silly audit   'read-cache': [ '1.0.0' ],
+31 silly audit   readdirp: [ '3.6.0' ],
+31 silly audit   'require-directory': [ '2.1.1' ],
+31 silly audit   resolve: [ '1.22.10' ],
+31 silly audit   'resolve-pkg-maps': [ '1.0.0' ],
+31 silly audit   reusify: [ '1.1.0' ],
+31 silly audit   rollup: [ '4.50.2' ],
+31 silly audit   'run-parallel': [ '1.2.0' ],
+31 silly audit   rxjs: [ '7.8.2' ],
+31 silly audit   'safe-buffer': [ '5.2.1' ],
+31 silly audit   'safer-buffer': [ '2.1.2' ],
+31 silly audit   scheduler: [ '0.23.2' ],
+31 silly audit   send: [ '0.19.0' ],
+31 silly audit   'serve-static': [ '1.16.2' ],
+31 silly audit   setprototypeof: [ '1.2.0' ],
+31 silly audit   'shebang-command': [ '2.0.0' ],
+31 silly audit   'shebang-regex': [ '3.0.0' ],
+31 silly audit   'shell-quote': [ '1.8.3' ],
+31 silly audit   'side-channel': [ '1.1.0' ],
+31 silly audit   'side-channel-list': [ '1.0.0' ],
+31 silly audit   'side-channel-map': [ '1.0.1' ],
+31 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+31 silly audit   'signal-exit': [ '4.1.0' ],
+31 silly audit   'source-map': [ '0.6.1' ],
+31 silly audit   'source-map-js': [ '1.2.1' ],
+31 silly audit   'source-map-support': [ '0.5.21' ],
+31 silly audit   split2: [ '4.2.0' ],
+31 silly audit   statuses: [ '2.0.1' ],
+31 silly audit   sucrase: [ '3.35.0' ],
+31 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+31 silly audit   tailwindcss: [ '3.4.17' ],
+31 silly audit   thenify: [ '3.3.1' ],
+31 silly audit   'thenify-all': [ '1.6.0' ],
+31 silly audit   'to-regex-range': [ '5.0.1' ],
+31 silly audit   toidentifier: [ '1.0.1' ],
+31 silly audit   'tree-kill': [ '1.2.2' ],
+31 silly audit   'ts-interface-checker': [ '0.1.13' ],
+31 silly audit   tslib: [ '2.8.1' ],
+31 silly audit   tsx: [ '4.20.5' ],
+31 silly audit   'type-is': [ '1.6.18' ],
+31 silly audit   typescript: [ '5.9.2' ],
+31 silly audit   unpipe: [ '1.0.0' ],
+31 silly audit   'update-browserslist-db': [ '1.1.3' ],
+31 silly audit   'util-deprecate': [ '1.0.2' ],
+31 silly audit   'utils-merge': [ '1.0.1' ],
+31 silly audit   vary: [ '1.1.2' ],
+31 silly audit   vite: [ '5.4.20' ],
+31 silly audit   which: [ '2.0.2' ],
+31 silly audit   xtend: [ '4.0.2' ],
+31 silly audit   y18n: [ '5.0.8' ],
+31 silly audit   yaml: [ '2.8.1' ],
+31 silly audit   yargs: [ '17.7.2' ],
+31 silly audit   'yargs-parser': [ '21.1.1' ],
+31 silly audit   zod: [ '3.25.76' ],
+31 silly audit   'drizzle-orm': [ '0.33.0' ],
+31 silly audit   '@types/node': [ '22.18.4' ],
+31 silly audit   '@types/pg': [ '8.15.5' ],
+31 silly audit   'undici-types': [ '6.21.0' ]
+31 silly audit }
+32 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-win32-x64-msvc
+33 silly reify mark deleted [
+33 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-win32-x64-msvc'
+33 silly reify ]
+34 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-win32-ia32-msvc
+35 silly reify mark deleted [
+35 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-win32-ia32-msvc'
+35 silly reify ]
+36 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-win32-arm64-msvc
+37 silly reify mark deleted [
+37 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-win32-arm64-msvc'
+37 silly reify ]
+38 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-openharmony-arm64
+39 silly reify mark deleted [
+39 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-openharmony-arm64'
+39 silly reify ]
+40 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-x64-musl
+41 silly reify mark deleted [
+41 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-x64-musl'
+41 silly reify ]
+42 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-x64-gnu
+43 silly reify mark deleted [
+43 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-x64-gnu'
+43 silly reify ]
+44 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-s390x-gnu
+45 silly reify mark deleted [
+45 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-s390x-gnu'
+45 silly reify ]
+46 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-riscv64-musl
+47 silly reify mark deleted [
+47 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-riscv64-musl'
+47 silly reify ]
+48 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-riscv64-gnu
+49 silly reify mark deleted [
+49 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-riscv64-gnu'
+49 silly reify ]
+50 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-ppc64-gnu
+51 silly reify mark deleted [
+51 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-ppc64-gnu'
+51 silly reify ]
+52 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-loong64-gnu
+53 silly reify mark deleted [
+53 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-loong64-gnu'
+53 silly reify ]
+54 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm64-musl
+55 silly reify mark deleted [
+55 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm64-musl'
+55 silly reify ]
+56 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm64-gnu
+57 silly reify mark deleted [
+57 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm64-gnu'
+57 silly reify ]
+58 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm-musleabihf
+59 silly reify mark deleted [
+59 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm-musleabihf'
+59 silly reify ]
+60 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm-gnueabihf
+61 silly reify mark deleted [
+61 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-linux-arm-gnueabihf'
+61 silly reify ]
+62 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-freebsd-x64
+63 silly reify mark deleted [
+63 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-freebsd-x64'
+63 silly reify ]
+64 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-freebsd-arm64
+65 silly reify mark deleted [
+65 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-freebsd-arm64'
+65 silly reify ]
+66 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-darwin-x64
+67 silly reify mark deleted [
+67 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-darwin-x64'
+67 silly reify ]
+68 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-android-arm64
+69 silly reify mark deleted [
+69 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-android-arm64'
+69 silly reify ]
+70 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-android-arm-eabi
+71 silly reify mark deleted [
+71 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@rollup/rollup-android-arm-eabi'
+71 silly reify ]
+72 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/win32-x64
+73 silly reify mark deleted [
+73 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/win32-x64'
+73 silly reify ]
+74 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/win32-ia32
+75 silly reify mark deleted [
+75 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/win32-ia32'
+75 silly reify ]
+76 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/win32-arm64
+77 silly reify mark deleted [
+77 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/win32-arm64'
+77 silly reify ]
+78 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/sunos-x64
+79 silly reify mark deleted [
+79 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/sunos-x64'
+79 silly reify ]
+80 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/openharmony-arm64
+81 silly reify mark deleted [
+81 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/openharmony-arm64'
+81 silly reify ]
+82 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/openbsd-x64
+83 silly reify mark deleted [
+83 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/openbsd-x64'
+83 silly reify ]
+84 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/openbsd-arm64
+85 silly reify mark deleted [
+85 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/openbsd-arm64'
+85 silly reify ]
+86 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/netbsd-x64
+87 silly reify mark deleted [
+87 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/netbsd-x64'
+87 silly reify ]
+88 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/netbsd-arm64
+89 silly reify mark deleted [
+89 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/netbsd-arm64'
+89 silly reify ]
+90 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-x64
+91 silly reify mark deleted [
+91 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-x64'
+91 silly reify ]
+92 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-s390x
+93 silly reify mark deleted [
+93 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-s390x'
+93 silly reify ]
+94 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-riscv64
+95 silly reify mark deleted [
+95 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-riscv64'
+95 silly reify ]
+96 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-ppc64
+97 silly reify mark deleted [
+97 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-ppc64'
+97 silly reify ]
+98 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-mips64el
+99 silly reify mark deleted [
+99 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-mips64el'
+99 silly reify ]
+100 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-loong64
+101 silly reify mark deleted [
+101 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-loong64'
+101 silly reify ]
+102 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-ia32
+103 silly reify mark deleted [
+103 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-ia32'
+103 silly reify ]
+104 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-arm64
+105 silly reify mark deleted [
+105 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-arm64'
+105 silly reify ]
+106 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-arm
+107 silly reify mark deleted [
+107 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/linux-arm'
+107 silly reify ]
+108 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/freebsd-x64
+109 silly reify mark deleted [
+109 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/freebsd-x64'
+109 silly reify ]
+110 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/freebsd-arm64
+111 silly reify mark deleted [
+111 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/freebsd-arm64'
+111 silly reify ]
+112 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/darwin-x64
+113 silly reify mark deleted [
+113 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/darwin-x64'
+113 silly reify ]
+114 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/android-x64
+115 silly reify mark deleted [
+115 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/android-x64'
+115 silly reify ]
+116 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/android-arm64
+117 silly reify mark deleted [
+117 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/android-arm64'
+117 silly reify ]
+118 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/android-arm
+119 silly reify mark deleted [
+119 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/android-arm'
+119 silly reify ]
+120 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/aix-ppc64
+121 silly reify mark deleted [
+121 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild/aix-ppc64'
+121 silly reify ]
+122 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/win32-x64
+123 silly reify mark deleted [
+123 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/win32-x64'
+123 silly reify ]
+124 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/win32-ia32
+125 silly reify mark deleted [
+125 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/win32-ia32'
+125 silly reify ]
+126 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/win32-arm64
+127 silly reify mark deleted [
+127 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/win32-arm64'
+127 silly reify ]
+128 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/sunos-x64
+129 silly reify mark deleted [
+129 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/sunos-x64'
+129 silly reify ]
+130 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/openbsd-x64
+131 silly reify mark deleted [
+131 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/openbsd-x64'
+131 silly reify ]
+132 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/netbsd-x64
+133 silly reify mark deleted [
+133 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/netbsd-x64'
+133 silly reify ]
+134 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-x64
+135 silly reify mark deleted [
+135 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-x64'
+135 silly reify ]
+136 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-s390x
+137 silly reify mark deleted [
+137 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-s390x'
+137 silly reify ]
+138 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-riscv64
+139 silly reify mark deleted [
+139 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-riscv64'
+139 silly reify ]
+140 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-ppc64
+141 silly reify mark deleted [
+141 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-ppc64'
+141 silly reify ]
+142 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-mips64el
+143 silly reify mark deleted [
+143 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-mips64el'
+143 silly reify ]
+144 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-loong64
+145 silly reify mark deleted [
+145 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-loong64'
+145 silly reify ]
+146 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-ia32
+147 silly reify mark deleted [
+147 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-ia32'
+147 silly reify ]
+148 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-arm64
+149 silly reify mark deleted [
+149 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-arm64'
+149 silly reify ]
+150 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-arm
+151 silly reify mark deleted [
+151 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/linux-arm'
+151 silly reify ]
+152 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/freebsd-x64
+153 silly reify mark deleted [
+153 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/freebsd-x64'
+153 silly reify ]
+154 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/freebsd-arm64
+155 silly reify mark deleted [
+155 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/freebsd-arm64'
+155 silly reify ]
+156 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/darwin-x64
+157 silly reify mark deleted [
+157 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/darwin-x64'
+157 silly reify ]
+158 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/android-x64
+159 silly reify mark deleted [
+159 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/android-x64'
+159 silly reify ]
+160 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/android-arm64
+161 silly reify mark deleted [
+161 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/android-arm64'
+161 silly reify ]
+162 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/android-arm
+163 silly reify mark deleted [
+163 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/@esbuild-kit/core-utils/node_modules/@esbuild/android-arm'
+163 silly reify ]
+164 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/win32-x64
+165 silly reify mark deleted [
+165 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/win32-x64'
+165 silly reify ]
+166 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/win32-ia32
+167 silly reify mark deleted [
+167 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/win32-ia32'
+167 silly reify ]
+168 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/win32-arm64
+169 silly reify mark deleted [
+169 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/win32-arm64'
+169 silly reify ]
+170 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/sunos-x64
+171 silly reify mark deleted [
+171 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/sunos-x64'
+171 silly reify ]
+172 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/openbsd-x64
+173 silly reify mark deleted [
+173 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/openbsd-x64'
+173 silly reify ]
+174 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/netbsd-x64
+175 silly reify mark deleted [
+175 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/netbsd-x64'
+175 silly reify ]
+176 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-x64
+177 silly reify mark deleted [
+177 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-x64'
+177 silly reify ]
+178 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-s390x
+179 silly reify mark deleted [
+179 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-s390x'
+179 silly reify ]
+180 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-riscv64
+181 silly reify mark deleted [
+181 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-riscv64'
+181 silly reify ]
+182 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-ppc64
+183 silly reify mark deleted [
+183 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-ppc64'
+183 silly reify ]
+184 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-mips64el
+185 silly reify mark deleted [
+185 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-mips64el'
+185 silly reify ]
+186 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-loong64
+187 silly reify mark deleted [
+187 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-loong64'
+187 silly reify ]
+188 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-ia32
+189 silly reify mark deleted [
+189 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-ia32'
+189 silly reify ]
+190 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-arm64
+191 silly reify mark deleted [
+191 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-arm64'
+191 silly reify ]
+192 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-arm
+193 silly reify mark deleted [
+193 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/linux-arm'
+193 silly reify ]
+194 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/freebsd-x64
+195 silly reify mark deleted [
+195 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/freebsd-x64'
+195 silly reify ]
+196 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/freebsd-arm64
+197 silly reify mark deleted [
+197 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/freebsd-arm64'
+197 silly reify ]
+198 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/darwin-x64
+199 silly reify mark deleted [
+199 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/darwin-x64'
+199 silly reify ]
+200 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/android-x64
+201 silly reify mark deleted [
+201 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/android-x64'
+201 silly reify ]
+202 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/android-arm64
+203 silly reify mark deleted [
+203 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/android-arm64'
+203 silly reify ]
+204 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/android-arm
+205 silly reify mark deleted [
+205 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/android-arm'
+205 silly reify ]
+206 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/aix-ppc64
+207 silly reify mark deleted [
+207 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/vite/node_modules/@esbuild/aix-ppc64'
+207 silly reify ]
+208 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/win32-x64
+209 silly reify mark deleted [
+209 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/win32-x64'
+209 silly reify ]
+210 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/win32-ia32
+211 silly reify mark deleted [
+211 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/win32-ia32'
+211 silly reify ]
+212 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/win32-arm64
+213 silly reify mark deleted [
+213 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/win32-arm64'
+213 silly reify ]
+214 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/sunos-x64
+215 silly reify mark deleted [
+215 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/sunos-x64'
+215 silly reify ]
+216 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/openbsd-x64
+217 silly reify mark deleted [
+217 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/openbsd-x64'
+217 silly reify ]
+218 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/netbsd-x64
+219 silly reify mark deleted [
+219 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/netbsd-x64'
+219 silly reify ]
+220 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-x64
+221 silly reify mark deleted [
+221 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-x64'
+221 silly reify ]
+222 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-s390x
+223 silly reify mark deleted [
+223 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-s390x'
+223 silly reify ]
+224 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-riscv64
+225 silly reify mark deleted [
+225 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-riscv64'
+225 silly reify ]
+226 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-ppc64
+227 silly reify mark deleted [
+227 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-ppc64'
+227 silly reify ]
+228 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-mips64el
+229 silly reify mark deleted [
+229 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-mips64el'
+229 silly reify ]
+230 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-loong64
+231 silly reify mark deleted [
+231 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-loong64'
+231 silly reify ]
+232 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-ia32
+233 silly reify mark deleted [
+233 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-ia32'
+233 silly reify ]
+234 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-arm64
+235 silly reify mark deleted [
+235 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-arm64'
+235 silly reify ]
+236 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-arm
+237 silly reify mark deleted [
+237 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/linux-arm'
+237 silly reify ]
+238 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/freebsd-x64
+239 silly reify mark deleted [
+239 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/freebsd-x64'
+239 silly reify ]
+240 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/freebsd-arm64
+241 silly reify mark deleted [
+241 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/freebsd-arm64'
+241 silly reify ]
+242 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/darwin-x64
+243 silly reify mark deleted [
+243 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/darwin-x64'
+243 silly reify ]
+244 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/android-x64
+245 silly reify mark deleted [
+245 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/android-x64'
+245 silly reify ]
+246 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/android-arm64
+247 silly reify mark deleted [
+247 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/android-arm64'
+247 silly reify ]
+248 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/android-arm
+249 silly reify mark deleted [
+249 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/android-arm'
+249 silly reify ]
+250 verbose reify failed optional dependency /Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/aix-ppc64
+251 silly reify mark deleted [
+251 silly reify   '/Users/ayyappanp/Documents/Customer360/node_modules/tsx/node_modules/@esbuild/aix-ppc64'
+251 silly reify ]
+252 http cache undici-types@https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 0ms (cache hit)
+253 http cache fsevents@https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz 0ms (cache hit)
+254 http cache @types/node@https://registry.npmjs.org/@types/node/-/node-22.18.4.tgz 0ms (cache hit)
+255 http cache @types/pg@https://registry.npmjs.org/@types/pg/-/pg-8.15.5.tgz 0ms (cache hit)
+256 silly tarball no local data for undici-types@https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz. Extracting by manifest.
+257 silly tarball no local data for @types/node@https://registry.npmjs.org/@types/node/-/node-22.18.4.tgz. Extracting by manifest.
+258 silly tarball no local data for @types/pg@https://registry.npmjs.org/@types/pg/-/pg-8.15.5.tgz. Extracting by manifest.
+259 http fetch GET 200 https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 310ms (cache miss)
+260 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 379ms
+261 silly audit report {
+261 silly audit report   esbuild: [
+261 silly audit report     {
+261 silly audit report       id: 1102341,
+261 silly audit report       url: 'https://github.com/advisories/GHSA-67mh-4wv8-2f99',
+261 silly audit report       title: 'esbuild enables any website to send any requests to the development server and read the response',
+261 silly audit report       severity: 'moderate',
+261 silly audit report       vulnerable_versions: '<=0.24.2',
+261 silly audit report       cwe: [Array],
+261 silly audit report       cvss: [Object]
+261 silly audit report     }
+261 silly audit report   ]
+261 silly audit report }
+262 silly packumentCache corgi:https://registry.npmjs.org/esbuild cache-miss
+263 http fetch GET 200 https://registry.npmjs.org/@types/pg/-/pg-8.15.5.tgz 378ms (cache miss)
+264 http fetch GET 200 https://registry.npmjs.org/esbuild 139ms (cache revalidated)
+265 silly packumentCache corgi:https://registry.npmjs.org/esbuild set size:866881 disposed:false
+266 silly packumentCache corgi:https://registry.npmjs.org/@esbuild-kit%2fcore-utils cache-miss
+267 silly packumentCache corgi:https://registry.npmjs.org/drizzle-kit cache-miss
+268 silly packumentCache corgi:https://registry.npmjs.org/esbuild-register cache-miss
+269 silly packumentCache corgi:https://registry.npmjs.org/vite cache-miss
+270 http fetch GET 200 https://registry.npmjs.org/@types/node/-/node-22.18.4.tgz 524ms (cache miss)
+271 http fetch GET 200 https://registry.npmjs.org/esbuild-register 82ms (cache revalidated)
+272 silly packumentCache corgi:https://registry.npmjs.org/esbuild-register set size:52138 disposed:false
+273 http fetch GET 200 https://registry.npmjs.org/vite 93ms (cache revalidated)
+274 silly packumentCache corgi:https://registry.npmjs.org/vite set size:2070821 disposed:false
+275 http fetch GET 200 https://registry.npmjs.org/@esbuild-kit%2fcore-utils 104ms (cache revalidated)
+276 silly packumentCache corgi:https://registry.npmjs.org/@esbuild-kit%2fcore-utils set size:50014 disposed:false
+277 http fetch GET 200 https://registry.npmjs.org/drizzle-kit 107ms (cache revalidated)
+278 silly packumentCache corgi:https://registry.npmjs.org/drizzle-kit set size:2095080 disposed:false
+279 silly packumentCache corgi:https://registry.npmjs.org/@esbuild-kit%2fesm-loader cache-miss
+280 http fetch GET 200 https://registry.npmjs.org/@esbuild-kit%2fesm-loader 107ms (cache revalidated)
+281 silly packumentCache corgi:https://registry.npmjs.org/@esbuild-kit%2fesm-loader set size:48202 disposed:false
+282 silly ADD node_modules/undici-types
+283 silly ADD node_modules/@types/pg
+284 silly ADD node_modules/@types/node
+285 silly ADD node_modules/fsevents
+286 silly ADD
+287 silly ADD
+288 silly ADD
+289 silly ADD
+290 silly ADD
+291 silly ADD
+292 silly ADD
+293 silly ADD
+294 silly ADD
+295 silly ADD
+296 silly ADD
+297 silly ADD
+298 silly ADD
+299 silly ADD
+300 silly ADD
+301 silly ADD
+302 silly ADD
+303 silly ADD
+304 silly ADD
+305 silly ADD
+306 silly ADD
+307 silly ADD
+308 silly ADD
+309 silly ADD
+310 silly ADD
+311 silly ADD
+312 silly ADD
+313 silly ADD
+314 silly ADD
+315 silly ADD
+316 silly ADD
+317 silly ADD
+318 silly ADD
+319 silly ADD
+320 silly ADD
+321 silly ADD
+322 silly ADD
+323 silly ADD
+324 silly ADD
+325 silly ADD
+326 silly ADD
+327 silly ADD
+328 silly ADD
+329 silly ADD
+330 silly ADD
+331 silly ADD
+332 silly ADD
+333 silly ADD
+334 silly ADD
+335 silly ADD
+336 silly ADD
+337 silly ADD
+338 silly ADD
+339 silly ADD
+340 silly ADD
+341 silly ADD
+342 silly ADD
+343 silly ADD
+344 silly ADD
+345 silly ADD
+346 silly ADD
+347 silly ADD
+348 silly ADD
+349 silly ADD
+350 silly ADD
+351 silly ADD
+352 silly ADD
+353 silly ADD
+354 silly ADD
+355 silly ADD
+356 silly ADD
+357 silly ADD
+358 silly ADD
+359 silly ADD
+360 silly ADD
+361 silly ADD
+362 silly ADD
+363 silly ADD
+364 silly ADD
+365 silly ADD
+366 silly ADD
+367 silly ADD
+368 silly ADD
+369 silly ADD
+370 silly ADD
+371 silly ADD
+372 silly ADD
+373 silly ADD
+374 silly ADD
+375 silly ADD
+376 silly ADD
+377 silly ADD
+378 silly ADD
+379 silly ADD
+380 silly ADD
+381 silly ADD
+382 silly ADD
+383 silly ADD
+384 silly ADD
+385 silly ADD
+386 silly ADD
+387 silly ADD
+388 silly ADD
+389 silly ADD
+390 silly ADD
+391 silly ADD
+392 silly ADD
+393 silly ADD
+394 silly ADD
+395 silly ADD
+396 verbose cwd /Users/ayyappanp/Documents/Customer360
+397 verbose os Darwin 24.4.0
+398 verbose node v22.13.1
+399 verbose npm  v10.9.2
+400 verbose exit 0
+401 info ok

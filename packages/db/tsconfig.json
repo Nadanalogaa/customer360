@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["node"],
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "declarationDir": "dist"
+  },
+  "include": [
+    "src/**/*",
+    "drizzle.config.ts"
+  ]
+}
