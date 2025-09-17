@@ -213,7 +213,7 @@ async function buildWebsiteHtml(prompt: string, options: BuildOptions) {
     : [];
 
   const combined = chunks.join('\n');
-  const cleaned = cleanModelHtml(combined);
+  const cleaned = normalizeImageSources(cleanModelHtml(combined));
 
   return {
     model: data?.model ?? GEMINI_MODEL,
@@ -261,7 +261,7 @@ function fallbackWebsiteHtml(prompt: string, options: BuildOptions) {
   const safePrompt = escapeHtml(prompt);
   const safeName = escapeHtml(options.companyName ?? 'AI Website');
 
-  return `<!DOCTYPE html>
+  return normalizeImageSources(`<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -295,7 +295,7 @@ function fallbackWebsiteHtml(prompt: string, options: BuildOptions) {
     </main>
     <footer>Powered by Retail Promo Automation MVP</footer>
   </body>
-</html>`;
+</html>`);
 }
 
 async function deployToVercel(html: string, options: DeploymentOptions) {
@@ -387,4 +387,15 @@ function escapeHtml(value: string) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1200&q=80';
+
+function normalizeImageSources(html: string) {
+  return html.replace(/<img\b([^>]*?)src=["']([^"']+)["']([^>]*)>/gi, (full, before, src, after) => {
+    if (/^(https?:|data:|\/\/)/i.test(src.trim())) {
+      return full;
+    }
+    return `<img${before || ''}src="${PLACEHOLDER_IMAGE}"${after || ''}>`;
+  });
 }
