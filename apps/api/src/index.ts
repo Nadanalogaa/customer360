@@ -9,8 +9,21 @@ import { randomUUID } from 'node:crypto';
 
 const GEMINI_MODEL = process.env.GEMINI_MODEL ?? 'gemini-1.5-flash';
 
+const allowedOrigins = (process.env.WEB_ORIGIN ?? '').split(',').map((value) => value.trim()).filter(Boolean);
+
 const app = express();
-app.use(cors({ origin: process.env.WEB_ORIGIN, credentials: true }));
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) {
+      return callback(null, true);
+    }
+    if (allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    callback(new Error(`Origin ${origin} is not allowed by CORS`));
+  },
+  credentials: true
+}));
 app.use(express.json({ limit: '5mb' }));
 app.use(cookieParser());
 
