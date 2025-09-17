@@ -30,6 +30,18 @@ app.use(cookieParser());
 // Health
 app.get('/health', (_req: Request, res: Response) => res.json({ ok: true }));
 
+// Root info (for Render health checks)
+app.get('/', (_req: Request, res: Response) => {
+  res.json({
+    service: 'Retail Promo API',
+    endpoints: {
+      health: '/health',
+      websiteGenerate: '/api/website/generate',
+      websiteDeploy: '/api/website/deploy'
+    }
+  });
+});
+
 // Demo login (binds to first tenant or creates one)
 app.post('/api/auth/login', async (req: Request, res: Response) => {
   const { email } = req.body;
@@ -392,10 +404,38 @@ function escapeHtml(value: string) {
 const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1200&q=80';
 
 function normalizeImageSources(html: string) {
-  return html.replace(/<img\b([^>]*?)src=["']([^"']+)["']([^>]*)>/gi, (full, before, src, after) => {
-    if (/^(https?:|data:|\/\/)/i.test(src.trim())) {
+  const withImgSrc = html.replace(/<img\b[^>]*>/gi, (tag) => {
+    let updatedTag = tag;
+
+    updatedTag = updatedTag.replace(/src=["']([^"']+)["']/i, (_match, value) => {
+      if (/^(https?:|data:|\/\/)/i.test(value.trim())) {
+        return _match;
+      }
+      return `src="${PLACEHOLDER_IMAGE}"`;
+    });
+
+    updatedTag = updatedTag.replace(/srcset=["']([^"']+)["']/i, (_match, value) => {
+      const sanitized = value
+        .split(',')
+        .map((entry) => entry.trim())
+        .map((entry) => {
+          const [url, descriptor] = entry.split(/\s+/);
+          if (url && /^(https?:|data:|\/\/)/i.test(url)) {
+            return entry;
+          }
+          return descriptor ? `${PLACEHOLDER_IMAGE} ${descriptor}` : PLACEHOLDER_IMAGE;
+        })
+        .join(', ');
+      return `srcset="${sanitized}"`;
+    });
+
+    return updatedTag;
+  });
+
+  return withImgSrc.replace(/url\((['"]?)([^'"\)]+)\1\)/gi, (full, quote, value) => {
+    if (/^(https?:|data:|\/\/)/i.test(value.trim())) {
       return full;
     }
-    return `<img${before || ''}src="${PLACEHOLDER_IMAGE}"${after || ''}>`;
+    return `url(${PLACEHOLDER_IMAGE})`;
   });
 }
